@@ -36,40 +36,7 @@ function TodoForm({addTodo}){
   )
 }
 
-function Home(){
-  const [todos, setTodos] = useState([
-    { text: 'React', isCompleted: true },
-    { text: 'Angular', isCompleted: false },
-    { text: 'Vue', isCompleted: false },
-    { text: 'Nodejs', isCompleted: true },
-    { text: 'Expresjs', isCompleted: false },
-    { text: 'Mongodb', isCompleted: false },
-    { text: 'Webpack', isCompleted: true },
-    { text: 'Babel', isCompleted: false },
-    { text: 'Parcel', isCompleted: false },
-    { text: 'Grunt', isCompleted: true },
-    { text: 'NPM', isCompleted: false },
-    { text: 'Jquery', isCompleted: true },
-  ]);
-
-  const addTodo = text => {
-    const newTodos = [{ text, isCompleted: false }, ...todos];
-    setTodos(newTodos);
-  }
-
-  const toggleComplete = index => {
-    // console.log(index);
-    const newTodos = [...todos];
-    newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    setTodos(newTodos);
-  }
-  
-  const deleteTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  }
-
+function Home({ todos, toggleComplete, deleteTodo, addTodo }){
   return (
     <div className="app">
         <div className="container">

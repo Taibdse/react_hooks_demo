@@ -1,0 +1,1 @@
+export const storageKey = 'react_hook_todos';
